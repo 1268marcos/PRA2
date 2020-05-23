@@ -1,5 +1,12 @@
-@Entity(tableName = "Things")
-public class Things {
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "things")
+
+public class ThingTodoBefore {
   
   @PrimaryKey(autoGenerate = true)
     @NonNull
@@ -8,13 +15,16 @@ public class Things {
 
     @Nullable
     @ColumnInfo(name = "thingsGrade")
-    private String mGrade;
+    private int mGrade;
   
+     private String mCreationDate;
+    private int mAge;
+    private String mDescription;
+
   
-public Things(@Nullable String Id, int Grade ,String CreationDate , int Age, String Description) {
-        mId=id;
+public ThingTodoBefore(int grade ,String creationDate , int age, String description) {
         mGrade= grade;
-        mCreationDate= creationdate;
+        mCreationDate= creationDate;
         mAge=age;
         mDescription=description;
  }
@@ -31,15 +41,10 @@ public Things(@Nullable String Id, int Grade ,String CreationDate , int Age, Str
         return mGrade;
     }
 
-    public void setGrade(int Grade ) {
+    public void setGrade(int grade ) {
         mGrade = grade;
     }
   
-
-    public String getCreationDate() {
-        return mCreationDate;
-    }
-
     public void setCreationDate(String creationDate) {
         mCreationDate = creationDate;
     }
@@ -48,7 +53,7 @@ public Things(@Nullable String Id, int Grade ,String CreationDate , int Age, Str
         return mAge;
     }
 
-    public void setAge(int Age) {
+    public void setAge(int age) {
         mAge = age;
     }
 
@@ -56,7 +61,7 @@ public Things(@Nullable String Id, int Grade ,String CreationDate , int Age, Str
         return mCreationDate;
     }
 
-    public void setDescription(String Description) {
+    public void setDescription(String description) {
         mDescription = description;
     }
 
